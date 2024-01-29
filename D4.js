@@ -59,7 +59,15 @@ console.log("ESERCIZIO 4", boundary(12));
  ritornare la stringa originale senza alterarla.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const epify = function (str) {
+  if (str.startsWith("EPICODE")) {
+    return str;
+  } else {
+    return "EPICODE " + str;
+  }
+};
+console.log(epify("EPICODE"));
+console.log(epify("Ciao"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -79,7 +87,13 @@ console.log("ESERCIZIO 6", check3and7(20));
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const reverseString = function (str) {
+  let splitString = str.split("");
+  let reverseString = splitString.reverse();
+  let finalString = reverseString.join("");
+  return finalString;
+};
+console.log(reverseString("EPICODE"));
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -93,10 +107,23 @@ console.log("ESERCIZIO 6", check3and7(20));
  della stringa originale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(str) {
+  const modifiedStr = str.substring(1, str.length - 1);
+  return modifiedStr;
+}
+console.log(cutString("Epicode!"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  const arr = [];
+  for (let i = 0; i < n; i++) {
+    const randNum = Math.floor(Math.random() * 11);
+    console.log(randNum);
+    arr.push(randNum);
+  }
+  return arr;
+}
+giveMeRandom = 6;
